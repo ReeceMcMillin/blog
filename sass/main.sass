@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&family=DM+Sans&family=EB+Garamond:ital,wght@0,200;0,500;0,800;1,500&family=Patua+One&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css')
+
+$title-font: 'DM Sans', sans-serif
+$body-font: 'DM Sans', sans-serif;
+$verbatim-font: 'DM Mono', monospace
+$math-font: 'Computer Modern Serif', serif;
+$fg-color: #333
+$bg-color: #fff
+$accent-color: rgb(212, 41, 201)
+$highlight-color: rgb(143, 188, 255)
+$subtle-color: #9b9b9b
+$width-small: 600px
+$baseline-font-size: 1.25rem
+
+@mixin shadow-box($color: $fg-color, $padding-top: 0.6rem)
+    border: 1px solid black;
+    box-shadow: 0.5rem 0.5rem 0 $fg-color
+    padding: $padding-top 1rem 1rem 1rem
+    margin: 2rem
+    margin-right: 0
+    overflow: auto
+    overflow-x: auto
+    box-sizing: content-box
+    
+    h3
+        position: absolute
+        margin-top: -2.5rem
+        margin-left: -1.1rem
+
+    ul
+        padding: 0 0 0 2rem
+
+@mixin callout($type, $fg, $bg, $emoji)
+    &.#{$type}
+        background-color: $bg
+        border-color: $fg
+        padding: 1rem 2rem
+        margin: 1rem 0 1rem 0
+        width: 100%
+            
+        .callout-header
+            color: $fg
+            font-weight: bold
+            font-size: 1.4rem
+            letter-spacing: 2px
+            h3
+                text-transform: lowercase
+                margin: 0 0 1rem 0
+                padding: 0
+                padding-bottom: 0.2rem
+                border-bottom: 1px solid $fg
+            ::before
+                content: "#{$emoji}"
+                margin-right: .8rem
+
+        .callout-content > p
+            margin-top: 0
+            // letter-spacing: 1.2px
+
+pre
+    padding: 1rem;
+    margin-top: 0;
+    margin-bottom: 3rem;
+    overflow: auto;
+    font-size: $baseline-font-size;
+    font-family: $verbatim-font
+    font-size: 1rem;
+
+    [data-linenos]
+        padding: 1rem 0;
+        padding-left: 2rem;
+
+    table
+        td 
+            padding: 0;
+            font-size: 1rem;
+
+        // line number cells
+            :nth-of-type(1)
+                text-align: center;
+                user-select: none;
+
+    mark 
+        // If you want your highlights to take the full width.
+        display: block;
+        // The default background colour of a mark is bright yellow
+        background-color: rgba(254, 252, 232, 0.9);
+
+    table
+        width: 100%;
+        border-collapse: collapse;
+
+aside
+    font-family: $body-font
+    line-height: 1.5
+    float: right
+    background-color: $bg-color
+    min-width: 12rem
+    max-height: 10rem;
+    max-width: 20rem;
+    @media (max-width: $width-small)
+        @include shadow-box
+    @media (min-width: $width-small)
+        float: right
+        @include shadow-box
+        margin-top: 3rem
+    p
+        margin: 0.5rem
+        font-size: 1rem
+
+
+div
+    &.annotation
+        display: flex
+
+        >*
+            font-size: 1rem
+            font-weight: bold
+            font-family: $verbatim-font
+            color: $subtle-color
+            padding: 0
+            margin
+    
+        >.language-name
+            flex: 1
+
+        >.context
+            flex: 1
+            text-align: right
+
+    &.toc
+        h3
+            font-size: calc(#{$baseline-font-size} + 0.2rem)
+        min-height: fit-content
+        max-height: 15rem
+        min-width: 11rem
+        max-width: 25rem
+        overflow-x: auto
+        // white-space: nowrap
+        font-family: $verbatim-font
+        font-size: calc( #{$baseline-font-size} - 0.2rem )
+        padding-right: 0
+
+        @media (max-width: $width-small)
+            display: inline-block
+            @include shadow-box($padding-top: 0.6rem)
+        @media (min-width: $width-small)
+            float: right
+            @include shadow-box($padding-top: 0.6rem)
+        
+
+ul
+    margin: 0
+    // padding-left: 1rem
+    a
+        color: $accent-color
+        &:hover
+            color: $highlight-color
+            text-decoration: underline
+        &.active
+            color: $accent-color
+            font-weight: bold
+    li
+        padding-top: 0.4rem
+
+nav
+    ul
+        margin: 1rem 0
+        padding: 0
+        li
+            display: inline-block
+            margin-right: 1rem
+            a
+                color: $fg-color
+                text-decoration: none
+                :hover
+                    color: #000
+
+body
+    margin: 0
+    min-height: 100vh;
+    display: flex
+    flex-flow: column nowrap
+    align-items: center
+    font-family: $body-font
+    font-size: $baseline-font-size
+
+.title-block
+    display: flex
+    justify-content: center
+    text-align: center
+    width: 100%
+    display: inline-block
+
+h1
+    display: inline-block
+    font-size: 2rem
+    margin-top: 0
+    margin-bottom: 2rem
+    font-family: $body-font, sans-serif
+
+    &.title
+        display: block
+        font-size: 3rem
+
+p
+    font-family: $body-font, sans-serif
+    font-size: $baseline-font-size
+    line-height: 1.6
+    margin: 1rem 0
+
+p.subtitle
+    color: $subtle-color
+    margin-top: -1.5rem
+    font-weight: 300
+
+header
+    display: flex
+    flex-flow: column nowrap
+    width: 100%
+    margin-top: 3rem
+    max-width: 100%
+
+    #name
+        margin: 0 0 1rem 0
+
+    #name::after
+        content: ""
+        display: block
+        width: 72px
+        height: 2px
+        margin: 0.5rem 0 0 0
+        background-color: $accent-color
+
+        @media (max-width: $width-small)
+            margin-bottom: 3rem
+
+.site
+    display: flex
+    position: relative
+    max-width: 1280px
+    flex-flow: column nowrap
+    width: 80%
+    min-height: calc(100vh - 7rem)
+    padding-bottom: 7rem
+
+@media screen and (max-width: $width-small)
+    .site
+        width: 85%
+
+dl
+    border-left: 4px solid $accent-color
+    border-right: 4px solid $accent-color
+    margin: 3rem 10rem
+    padding: 0.5rem 2rem
+    
+    dt
+        font-size: 1.5rem
+        margin-bottom: 0.8rem
+        font-weight: bold
+    dd
+        font-size: 1rem
+        font-style: italic
+
+        > ul
+            padding-left: 0
+
+.callout-container
+    width: auto
+    display: flex
+    justify-content: center
+
+.callout
+    border-left: 6px solid
+
+    @include callout($type: "info", $fg: #3eaaca, $bg: #e3edf2, $emoji: "📘")
+    @include callout($type: "error", $fg: #ff4747, $bg: #fdf7f7, $emoji: "❗")
+    @include callout($type: "note", $fg: #22bd03, $bg: #f3f8f3, $emoji: "🐢")
+    @include callout($type: "warning", $fg: #d6c102, $bg: #fcf8f2 , $emoji: "⚠️")
+
+h1, h2, h3, h4, h5, h6
+    font-family: $title-font
+    margin: 1.5rem 0
+
+article.content
+    display: block
+    h1
+        &:not(:first-child)
+            margin-top: 4rem
+        display: block
+        // border-left: 0.5rem groove $highlight-color;
+        font-size: 2.5rem
+        // padding-left: 1.2rem
+
+.site > .footer-wrapper
+    margin: 0 auto
+    display: flex
+    justify-content: center
+    height: 4rem
+
+    position: absolute
+    bottom: 0
+
+    width: 100%
+    > footer
+        width: 30rem
+        border-top: 1px solid $subtle-color
+        > p
+            margin: 1rem 0 0 0
+            text-align: center
+            font-size: 1rem
+
+.container
+    padding-bottom: 1.5rem
+
+.title-block
+    margin-bottom: 2rem
+
+div
+    .math-wrapper
+        width: 100%
+        display: flex
+        justify-content: center
+        .theorem
+            max-width: 50rem
+            border: 1px solid $fg-color
+            padding: 1rem 2rem
+            > h1
+                font-size: 2rem
+                margin: 0 0 1rem 0
+                font-family: $math-font
+                border-bottom: 1px solid $fg-color
+                border-left: none
+                padding-left: 0
+
+            > p
+                font-size: 1.5rem
+                margin: 0
+                font-family: $math-font
+
+                .katex
+                    font-size: 1.5rem
+
+blockquote
+    border-left: 4px solid $subtle-color
+    padding: 0.2rem 2rem
+    margin: 1rem 0
+    font-size: 1.5rem
+    font-style: italic
+    font-family: $body-font

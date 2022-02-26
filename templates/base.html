@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
+    {% if page.extra.mathjax %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+        integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"
+        integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"
+        crossorigin="anonymous"></script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    {% endif %}
+    <title>Reece McMillin</title>
+</head>
+
+<body>
+    <div class="site">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="{{ get_url(path='/') }}">Home</a></li>
+                    <li><a href="{{ get_url(path='about') }}">About</a></li>
+                    <li><a href="{{ get_url(path='blog') }}">Blog</a></li>
+                    <li><a href="{{ get_url(path='notes') }}">Notes</a></li>
+                </ul>
+            </nav>
+            <h1 id="name">Reece McMillin</h1>
+        </header>
+        <section class="section">
+            <div class="content">
+                {% block content %} {% endblock %}
+            </div>
+        </section>
+        <div class="footer-wrapper">
+            <footer>
+                <p>reece mcmillin, made with ♥ using <a href="https://www.getzola.org/">zola</a></p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
