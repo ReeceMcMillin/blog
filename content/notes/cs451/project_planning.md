@@ -74,4 +74,4 @@ note 4 l8r
   - algorithm models
   - expert opinion
 
-[Continued here!](@notes/cs451/project_planning_continued.md)
+[Continued here!](@/notes/cs451/project_planning_continued.md)

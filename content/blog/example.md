@@ -18,7 +18,7 @@ see? cool!
 
 Code snippets can have filename annotations with the `annotation` shortcode!
 
-{{ annotation(language="rust", context="hello-world.rs") }}
+{% annotation(language="rust", context="hello-world.rs") %}
 
 ```rust, linenos, hl_lines=2 4
 fn main() {
@@ -28,6 +28,7 @@ fn main() {
     println!("hello world!");
 }
 ```
+{% end %}
 
 # Blocky Lil Guys
 
@@ -75,7 +76,7 @@ that's about it for this one but i'm adding some text here to pad things out
 
 math is enabled under the `[extra]` options in the front matter
 
-{{ annotation(context="the front matter of this doc!") }}
+{% annotation(context="the front matter of this doc!") %}
 
 ```toml
 +++
@@ -86,6 +87,8 @@ insert_anchor_links = true
 mathjax = true
 +++
 ```
+
+{% end %}
 
 ## inline
 

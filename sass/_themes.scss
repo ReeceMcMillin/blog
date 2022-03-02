@@ -1,0 +1,44 @@
+$light-primary: #00bcd4;
+$light-secondary: #ff9800;
+$light-subtext: #b0bec5;
+$light-accent: #ff5722;
+$light-accent-2: #e5a2ff;
+$light-background: #fafafa;
+$light-foreground: #212121;
+$light-text: #212121;
+
+$dark-primary: #00bcd4;
+$dark-secondary: #ff9800;
+$dark-subtext: #b8d1d4;
+$dark-accent: #ff5722;
+$dark-accent-2: #e5a2ff;
+$dark-background: #212121;
+$dark-foreground: #fafafa;
+$dark-text: #fafafa;
+
+$themes: (
+    light: (
+        primary: $light-primary,
+        secondary: $light-secondary,
+        subtext: $light-subtext,
+        accent: $light-accent,
+        accent-2: $light-accent-2,
+        background: $light-background,
+        foreground: $light-foreground,
+        text: $light-text
+    ),
+    dark: (
+        primary: $dark-primary,
+        secondary: $dark-secondary,
+        subtext: $dark-subtext,
+        accent: $dark-accent,
+        accent-2: $dark-accent-2,
+        background: $dark-background,
+        foreground: $dark-foreground,
+        text: $dark-text
+    )
+);
+
+@function theme-color($theme, $color) {
+    @return map-get(map-get($themes, $theme), $color);
+}

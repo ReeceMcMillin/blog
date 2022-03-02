@@ -1,9 +1,12 @@
-<div class="annotation">
-    {% if language %}
-    <div class="language-name">language: {{ language }}</div>
-    {% endif %}
+<div class="annotation-wrapper">
+    <div class="annotation">
+        {% if language %}
+        <div class="language-name">language: {{ language }}</div>
+        {% endif %}
 
-    {% if context %}
-    <div class="context">{{ context }}</div>
-    {% endif %}
+        {% if context %}
+        <div class="context">{{ context }}</div>
+        {% endif %}
+    </div>
+    {{ body | markdown(inline=true) | safe }}
 </div>

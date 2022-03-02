@@ -19,7 +19,7 @@ Consider \\(n\\) buffers, each able to hold one item. Also consider three semaph
 \end{align}
 \\]
 
-{{ annotation(language="C", context="producer process") }}
+{% annotation(language="C", context="producer process") %}
 ```c
 do {
     /* produce an item in next_produced */
@@ -33,12 +33,14 @@ do {
 } while (true);
 ```
 
+{% end %}
+
 {% callout(type="note") %}
 `wait` indicates a program is waiting to enter the critical section
 
 {% end %}
 
-{{ annotation(language="C", context="producer process") }}
+{% annotation(language="C", context="producer process") %}
 ```c
 do {
     /* remove item from buffer to next_consumed */
@@ -52,9 +54,11 @@ do {
 } while (true);
 ```
 
+{% end %}
+
 ## Readers & Writers Problem
 
-{{ annotation(language="C", context="writer process") }}
+{% annotation(language="C", context="writer process") %}
 ```c
 do {
     wait(rw_mutex);
@@ -62,6 +66,7 @@ do {
     signal(rw_mutex);
 } while true
 ```
+{% end %}
 
 ## Dining-Philosophers Problem
 

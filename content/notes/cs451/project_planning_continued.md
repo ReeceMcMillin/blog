@@ -9,9 +9,10 @@ mathjax = true
 
 Most common tool: the [Gantt Chart](https://www.gantt.com/). It shows start and stop types for tasks in a usually recognizable calendar form. It also shows timing of milestones.
 
-{{ annotation(context = "example gantt chart") }}
+{% annotation(context = "example gantt chart") %}
 ![Gantt Chart](https://www.gantt.com/img/gantt-chart-1.jpg)
 
+{% end %}
 # Critical Path Analysis & Float Time
 
 The longest sequence of activities in the network diagram
