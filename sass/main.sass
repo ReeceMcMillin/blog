@@ -8,7 +8,13 @@ $title-font: 'DM Sans', sans-serif
 $body-font: 'DM Sans', sans-serif
 $monospace-font: 'DM Mono', monospace
 $math-font: 'Computer Modern Serif', serif
-$theme: light   // or dark
+$math-size: calc(#{$body-size} * 1.3)
+$theme: dark   // light or dark
+
+@mixin math-font
+    font-family: $math-font;
+    font-size: calc(#{$body-size} * 1.3);
+    font-weight: normal;
 
 @mixin callout($type, $fg, $bg, $emoji)
     &.#{$type}
@@ -33,9 +39,6 @@ $theme: light   // or dark
                 content: "#{$emoji}"
                 margin-right: .8rem
 
-        .callout-content > p
-            margin-top: 0
-
 @mixin breakpoint($point)
     @if $point == desktop
         @media (min-width: 1025px)
@@ -58,9 +61,9 @@ $theme: light   // or dark
     
     ul
         a
-            color: theme-color($theme, accent)
+            color: theme-color($theme, primary)
             &:hover
-                color: theme-color($theme, accent-2)
+                color: theme-color($theme, secondary)
     
     h3
         font-size: calc(#{$header-size} - 1.5rem)
@@ -106,12 +109,17 @@ pre
         border-collapse: collapse;
 
 body
-    color: theme-color($theme, text)
+    color: theme-color($theme, foreground)
     background: theme-color($theme, background)
     display: flex
     min-height: 100vh
     margin: 0
     justify-content: center
+
+    .katex
+        font-size: $math-size;
+        font-family: $math-font;
+        font-weight: normal;
 
     div.site
         width: 85%
@@ -129,9 +137,9 @@ body
             font-size: $body-size
 
             a
-                color: theme-color($theme, accent)
+                color: theme-color($theme, primary)
                 &:hover
-                    color: theme-color($theme, accent-2)
+                    color: theme-color($theme, secondary)
         
     line-height: 1.5
     margin: 0
@@ -153,7 +161,7 @@ header
         width: 72px
         height: 2px
         margin: 0.5rem 0 0 0
-        background-color: theme-color($theme, accent)
+        background-color: theme-color($theme, primary)
 
     nav
         font-size: $body-size
@@ -175,9 +183,9 @@ header
             margin-right: 1rem
             a
                 text-decoration: none
-                color: theme-color($theme, text)
+                color: theme-color($theme, foreground)
                 &:hover
-                    color: theme-color($theme, accent-2)
+                    color: theme-color($theme, secondary)
 
 div
     &.title-block
@@ -195,6 +203,7 @@ div
             margin-bottom: 4rem
 
     &.toc
+        max-height: 14rem
         display: block
         font-family: $monospace-font
         padding-right: 1rem
@@ -202,6 +211,9 @@ div
         @include breakpoint(desktop)
             max-width: 60rem
             float: right
+        
+        ul
+            padding-left: 3rem
 
     &.annotation-wrapper
         display: inline-block
@@ -209,6 +221,7 @@ div
         margin: 3rem auto 0 auto
 
     &.annotation-title
+        display: flex
         text-align: right
         >*
             font-size: 1rem
@@ -218,6 +231,7 @@ div
             padding: 0
     
         >.language-name
+            text-align: left
             flex: 1
 
         >.context
@@ -232,6 +246,22 @@ div
             max-width: 90%
         @include breakpoint(mobile)
             max-width: 100%
+
+    &.math-wrapper
+        @include math-font
+        
+        display: inline-block
+        width: 100%
+        margin: 0rem auto 0 auto
+
+        ul
+            padding-left: 4rem
+            list-style-type: "- "
+
+        h2
+            span.katex
+                font-size: calc(#{$header-size} * 0.75)
+            
 
 article, section
     h1
@@ -253,20 +283,23 @@ article, section
     font-size: $body-size
 
     ul a
-        color: theme-color($theme, accent)
+        color: theme-color($theme, primary)
         &:hover
-            color: theme-color($theme, accent-2)
+            color: theme-color($theme, secondary)
+
+.def-wrapper
+    width: 100%
+    display: flex
+    justify-content: center
 
 dl
-    display: block
-    @include breakpoint(desktop)
-        display: inline-block
-    
-    border-left: 5px solid theme-color($theme, accent)
-    border-right: 5px solid theme-color($theme, accent)
+    // display: block
+    display: inline-block
+    border-left: 5px solid theme-color($theme, primary)
+    border-right: 5px solid theme-color($theme, primary)
     padding: 0.5rem 1rem
     @include breakpoint(desktop)
-        margin: 2rem 25%
+        margin: 2rem 20%
     @include breakpoint(tablet)
         margin: 0 10%
     @include breakpoint(mobile)
@@ -274,10 +307,12 @@ dl
         
         
     dt
+        display: block
         font-weight: bold
         // margin-bottom: 0.8rem
 
     dd
+        display: inline-block
         font-style: italic
         margin: 0 2rem
 
@@ -290,9 +325,9 @@ aside
     max-height: 10rem
     @include shadow-box
     @include breakpoint(desktop)
-        max-width: 40rem
+        max-width: 30rem
         float: right
-        margin: 3rem 0 1rem 3rem
+        margin: 3rem 0 2rem 3rem
     @include breakpoint(tablet)
         margin: 3rem 10% 1rem 10%
     @include breakpoint(mobile)
@@ -315,3 +350,15 @@ aside
     @include callout($type: "error", $fg: #ff4747, $bg: #fdf7f7, $emoji: "❗")
     @include callout($type: "note", $fg: #22bd03, $bg: #f3f8f3, $emoji: "🐢")
     @include callout($type: "warning", $fg: #d6c102, $bg: #fcf8f2 , $emoji: "⚠️")
+
+.cited-content
+    margin: 0 auto
+    padding: 1rem    
+
+cite
+    display: block
+    text-align: right
+    font-style: italic
+    font-size: $body-size
+    // color: theme-color($theme, secondary)
+

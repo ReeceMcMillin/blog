@@ -1,4 +1,6 @@
-<dl>
-    <dt>{{ term }}</dt>
-    <dd>{{ body | markdown(inline=true) | safe }}</dd>
-</dl>
+<div class="def-wrapper">
+    <dl>
+        <dt>{{ term }}</dt>
+        <dd>{{ body | markdown(inline=true) | safe }}</dd>
+    </dl>
+</div>

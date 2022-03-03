@@ -14,7 +14,8 @@ highlight_code = true
 # highlight_theme = 'idle'          # 4/5
 # highlight_theme = 'ir-white'      # 3/5
 # highlight_theme = 'subway-madrid'
-highlight_theme = 'ayu-light'
+# highlight_theme = 'ayu-light'
+highlight_theme = 'ayu-mirage'
 
 [extra]
 # Put all your custom variables here

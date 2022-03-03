@@ -1,41 +1,32 @@
-$light-primary: #00bcd4;
-$light-secondary: #ff9800;
+$light-primary: #fb4e00;
+$light-secondary: #2fb290;
 $light-subtext: #b0bec5;
-$light-accent: #ff5722;
-$light-accent-2: #e5a2ff;
-$light-background: #fafafa;
-$light-foreground: #212121;
-$light-text: #212121;
+$light-background: #f8f3ee;
+$light-foreground: #0c1a28;
 
-$dark-primary: #00bcd4;
-$dark-secondary: #ff9800;
-$dark-subtext: #b8d1d4;
-$dark-accent: #ff5722;
-$dark-accent-2: #e5a2ff;
-$dark-background: #212121;
-$dark-foreground: #fafafa;
-$dark-text: #fafafa;
+$dark-foreground: $light-background;
+$dark-background: $light-foreground;
+
+$dark-primary: #ff9a4d;
+$dark-secondary: #1adfbb;
+$dark-subtext: #bebaa3;
+$dark-foreground: #fcf8e1;
+$dark-background: #1f1f24;
 
 $themes: (
     light: (
         primary: $light-primary,
         secondary: $light-secondary,
         subtext: $light-subtext,
-        accent: $light-accent,
-        accent-2: $light-accent-2,
         background: $light-background,
         foreground: $light-foreground,
-        text: $light-text
     ),
     dark: (
         primary: $dark-primary,
         secondary: $dark-secondary,
         subtext: $dark-subtext,
-        accent: $dark-accent,
-        accent-2: $dark-accent-2,
         background: $dark-background,
         foreground: $dark-foreground,
-        text: $dark-text
     )
 );
 

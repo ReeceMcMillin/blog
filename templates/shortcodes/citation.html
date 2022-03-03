@@ -1,0 +1,12 @@
+<div class="cited-content">
+{{ body | markdown(inline=true) | safe }}
+    <cite>
+        <span class="citation-author">{{ author }}</span>
+        {% if title %}
+        <span class="citation-title">{{ title }}</span>
+        {% endif %}
+        {% if date %}
+        <span class="citation-date">{{ date }}</span>
+        {% endif %}
+    </cite>
+</div>

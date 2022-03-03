@@ -1,5 +1,7 @@
 <div class="math-wrapper">
-    <h1>{{ title }}</h1>
+    {% if title %}
+    <h2>{{ title | markdown(inline=true) | safe }}</h2>
+    {% endif %}
     <p>
         {{ body | markdown(inline=true) | safe }}
     </p>
