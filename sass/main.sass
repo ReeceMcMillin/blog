@@ -262,6 +262,20 @@ div
             span.katex
                 font-size: calc(#{$header-size} * 0.75)
             
+    &.boxed
+        @include shadow-box
+
+        margin: 4rem
+        
+        p
+            padding: 0 2rem
+
+    &.aside-wrapper
+        display: flex
+        justify-content: center
+        width: 100%
+        margin: 0
+            
 
 article, section
     h1
@@ -329,6 +343,7 @@ aside
         float: right
         margin: 3rem 0 2rem 3rem
     @include breakpoint(tablet)
+        // width: 80%
         margin: 3rem 10% 1rem 10%
     @include breakpoint(mobile)
         margin: 3rem 0 1rem 0
@@ -361,4 +376,3 @@ cite
     font-style: italic
     font-size: $body-size
     // color: theme-color($theme, secondary)
-

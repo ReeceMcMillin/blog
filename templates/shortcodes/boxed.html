@@ -1,0 +1,10 @@
+<div class="boxed">
+    {% if title %}
+    <div class="boxed-title">
+        <h3>{{ title }}</h3>
+    </div>
+    {% endif %}
+    <p>
+        {{ body | markdown(inline=true) | safe }}
+    </p>
+</div>

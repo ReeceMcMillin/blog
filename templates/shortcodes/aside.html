@@ -1,4 +1,6 @@
-<aside>
-    <h3>{{ title }}</h3>
-    <p>{{ body | markdown(inline=true) | safe }}</p>
-</aside>
+<div class="aside-wrapper">
+    <aside>
+        <h3>{{ title }}</h3>
+        <p>{{ body | markdown(inline=true) | safe }}</p>
+    </aside>
+</div>
