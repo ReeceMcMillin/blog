@@ -24,7 +24,8 @@ $theme: dark   // light or dark
         padding: 1rem 2rem
         margin: 1rem 0 1rem 0
         width: 100%
-            
+        color: #1f1f24;
+        
         .callout-header
             color: $fg
             font-weight: bold
@@ -111,6 +112,7 @@ pre
         border-collapse: collapse;
 
 body
+    transition: all 0.2s
     @include themify($themes)
         color: themed(foreground)
         background: themed(background)

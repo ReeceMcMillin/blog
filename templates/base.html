@@ -22,11 +22,12 @@
     <title>Reece McMillin</title>
 </head>
 
-<body class="theme-light">
+<body class="theme-dark">
     <script>
         function toggleDarkMode() {
             var light_elements = document.querySelectorAll('.theme-light');
             var dark_elements = document.querySelectorAll('.theme-dark');
+
             [...light_elements].map(function(element) {
                 element.classList.replace("theme-light", "theme-dark")
             });
@@ -57,16 +58,16 @@
                     <li><a href="{{ get_url(path='blog') }}">Blog</a></li>
                     <li><a href="{{ get_url(path='notes') }}">Notes</a></li>
                 </ul>
-                <img id="toggle-theme" class="theme-light" src="https://cdn0.iconfinder.com/data/icons/display-setting/64/Choose_theme-512.png" onclick="toggleDarkMode()" />
+                <img id="toggle-theme" class="theme-dark" src="https://cdn0.iconfinder.com/data/icons/display-setting/64/Choose_theme-512.png" onclick="toggleDarkMode()" />
             </nav>
-            <h1 id="name" class="theme-light">Reece McMillin</h1>
+            <h1 id="name" class="theme-dark">Reece McMillin</h1>
         </header>
         <section class="section">
             <div class="content">
                 {% block content %} {% endblock %}
             </div>
         </section>
-        <div class="footer-wrapper theme-light">
+        <div class="footer-wrapper theme-dark">
             <footer>
                 <p>reece mcmillin, made with ♥ using <a href="https://www.getzola.org/">zola</a></p>
             </footer>
