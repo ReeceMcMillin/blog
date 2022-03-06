@@ -11,7 +11,7 @@
 
 {% if page.toc %}
 
-<div class="toc">
+<div class="toc theme-light">
     <h3>Table of Contents</h3>
     <ul>
         {% for h1 in page.toc %}
@@ -32,7 +32,7 @@
 </div>
 
 {% endif %}
-<article class="content">
+<article class="content light-theme">
     {{ page.content | safe }}
 </article>
 {% endblock content %}

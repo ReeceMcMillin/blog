@@ -1,6 +1,6 @@
-$light-primary: #fb4e00;
-$light-secondary: #2fb290;
-$light-subtext: #b0bec5;
+$light-primary: #38638b;
+$light-secondary: #4caa34;
+$light-subtext: #768288;
 $light-background: #f8f3ee;
 $light-foreground: #0c1a28;
 
@@ -27,9 +27,35 @@ $themes: (
         subtext: $dark-subtext,
         background: $dark-background,
         foreground: $dark-foreground,
-    )
+    ),
 );
 
 @function theme-color($theme, $color) {
     @return map-get(map-get($themes, $theme), $color);
+}
+
+$theme-map: null;
+
+@mixin themify($themes: $themes) {
+    @each $theme, $map in $themes {
+        &.theme-#{$theme} {
+            $theme-map: () !global;
+            @each $key, $submap in $map {
+                $value: map-get(map-get($themes, $theme), "#{$key}");
+                $theme-map: map-merge(
+                    $theme-map,
+                    (
+                        $key: $value,
+                    )
+                ) !global;
+            }
+
+            @content;
+            $theme-map: null !global;
+        }
+    }
+}
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
 }
