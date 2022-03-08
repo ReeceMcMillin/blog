@@ -165,10 +165,15 @@ Unlike consensus, processes can be faulty
 
 Only one process (the commander) supplies a value that the other processes are to agree upon instead of each of them proposing a value.
 
-REquirements
-- Termination: e
+Requirements
+- Termination
 - Agreement: the decision value of all correct process is the same: $p_i = p_j \implies 
 - Integrity: if commander is correct, then all correct processes decide on the value the commander proposed
+
+{% aside(title="note") %}
+Leslie Lamport showed that this isn't true if generals can sign their messages, where the limit is $3f$. [Further reading here.](../../../papers/lamport-fault-tolerance.pdf)
+{% end %}
+
 
 It can be formally shown that with 3 processes where one can be faulty, it is **impossible** to design an algorithm that can solve BGP.
 - This isn't true if generals can *sign* their messages.
@@ -190,3 +195,31 @@ Assume a solution exists with $N \leq 3f$.
 Possible if $N \geq 3f + 1$.
 - $N = $ number of processes
 - $f = $ number of faulty processes.
+
+## BGP 
+
+### Impossibility of Consensus
+
+{% aside(title="key idea") %}
+A *faulty* process is indistinguishable from a *slow* one!
+{% end %}
+
+
+Fisher et al. proved that no algorithm can guarantee to reach consensus in an asynchronous system, even with *one* crash failure.
+
+# Partial Synchrony
+
+- "No guarantee" doesn't mean process *never* reach consensus with one faulty process
+  - impossibility in the limit
+  - consensus is fairly regular!
+
+- To work around impossibility, we consider *partially synchronous* systems
+  - sufficiently weaker than synchronous systems
+  - sufficiently stronger than asynchronous systems
+
+## Achieving Partial Synchrony
+
+- Masking faults
+- Consensus with failure detectors
+- Consensus with randomization
+

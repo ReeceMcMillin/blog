@@ -283,6 +283,7 @@ div
             list-style-type: "- "
 
         h2
+            text-align: center
             span.katex
                 font-size: calc(#{$header-size} * 0.75)
             
@@ -295,8 +296,6 @@ div
             padding: 0 2rem
 
     &.aside-wrapper
-        display: flex
-        justify-content: center
         width: 100%
         margin: 0
             
@@ -365,7 +364,7 @@ aside
         float: right
         margin: 3rem 0 2rem 3rem
     @include breakpoint(tablet)
-        // width: 80%
+        float: right
         margin: 3rem 10% 1rem 10%
     @include breakpoint(mobile)
         margin: 3rem 0 1rem 0
@@ -407,3 +406,13 @@ cite
     
     &.theme-dark
         filter: invert(100%)
+
+table
+    width: 100%
+    margin: 0 auto
+    @include breakpoint(desktop)
+        max-width: 60rem
+    @include breakpoint(tablet)
+        max-width: 90%
+    @include breakpoint(mobile)
+        max-width: 100%
