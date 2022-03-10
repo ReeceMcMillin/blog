@@ -52,7 +52,7 @@ Every message contains a unique identifier of the process who sent the message.
 
 ## Implementation
 <div class="columns">
-    <div class="column">
+<div class="column">
 
 {% annotation(context="sender") %}
 

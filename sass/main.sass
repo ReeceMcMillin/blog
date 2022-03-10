@@ -17,11 +17,9 @@ $theme: dark   // light or dark
 
 @mixin monospace-text
     font-family: $monospace-font
-    font-size: 1.5rem
+    font-size: 1.2rem
     font-weight: 400
-
-@mixin math-text
-
+    
 
 @mixin math-font
     font-family: $math-font;
@@ -286,24 +284,31 @@ div
 
     &.math-wrapper
         @include math-font
-        
-        display: inline-block
-        width: 100%
-        margin: 0rem auto 0 auto
+        @include themify($themes)
+            > ul
+                padding: 1rem 4rem
+                border-left: 4px solid themed(secondary)
+                border-right: 4px solid themed(secondary)
+                @include breakpoint(mobile)
+                    padding: 1rem 1rem
+                    ul
+                        list-style-type: "- "
+
+        display: block
+        margin: 0 auto
         font-size: $body-size
 
         ul
             list-style: none
         > ul
-            width: 100%
-            padding-left: 4rem
+            margin: 0 auto
+            padding-left: 0rem
             list-style: none
 
             @include breakpoint(mobile)
                 padding-left: 0
             
             li
-                width: max-content
                 p
                     margin: 0
 
