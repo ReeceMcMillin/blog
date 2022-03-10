@@ -222,4 +222,3 @@ Fisher et al. proved that no algorithm can guarantee to reach consensus in an as
 - Masking faults
 - Consensus with failure detectors
 - Consensus with randomization
-

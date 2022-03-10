@@ -64,9 +64,33 @@ do {
     wait(rw_mutex);
     // perform write
     signal(rw_mutex);
-} while true
+} while (true);
 ```
 {% end %}
 
-## Dining-Philosophers Problem
+{% annotation(language="C", context="reader process") %}
+```C
+do {
+    wait(mutex);            // acquire lock on read_count
+    read_count++;           // indicate we're reading
+    if (read_count == 1)    // if we're the *only* reader...
+        wait(rw_mutex);     // ⮡ then secure lock on the file
+    signal(mutex);          // release lock on read_count
+
+    // Reading!
+
+    wait(mutex);            // acquire lock on read_count
+    read_count--;
+    if (read_count == 0)    // if there are no more readers...
+        signal(rw_mutex);   // ⮡ then release lock on file
+    signal(mutex);          // release lock on read_count
+} while (true);
+```
+{% end %}
+
+# Transactional Memory
+
+{% definition(term="Memory Transaction") %}
+A sequence of read-write operations to memory that are performed atomically.
+{% end %}
 

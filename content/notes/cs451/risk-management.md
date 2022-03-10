@@ -15,13 +15,13 @@ The process of minimizing typical project risks.
 {% end %}
 
 1. Identify Risks
-   - Risks can be project, product, or business risks
+	- Risks can be project, product, or business risks
 2. Analyze Risks
 
 ## Styles of Analysis
 
 ### Quantitative
-$$\text{risk exposure} = \mathbb{P}(\text{risk}) \cdot \text{expected loss}$$
+$$\text{risk exposure} = \mathcal{P}(\text{risk}) \cdot \text{expected loss}$$
 
 |        Risk         | Probability |  Loss   | Risk Exposure |
 | :-----------------: | :---------: | :-----: | :-----------: |
@@ -45,3 +45,25 @@ Which is better, qualitative or quantitative?
 3. Simulation
 
 # Prioritize Risks
+
+# Other Considerations
+
+1. Catastrophic Events
+2. Compound Risks
+3. Confidence in Estimates
+4. Risk Response
+	- Action Plans
+	  - Avoidance
+	  - Risk Transfer
+    	  - transfer responsibility to someone else (think insurance industry)
+	  - Mitigation
+	  - Buying Information
+    	  - spend time gathering more information
+	- Contingency Plans
+       - Risk Acceptance
+5. Monitor and Evaluate Changing Risks
+6. Risk Response Plan
+
+$$
+\text{Risk Reduction} = \frac{\text{Risk Estimate Before} - \text{Risk Estimate After}}{\text{Reduction Cost}}
+$$
