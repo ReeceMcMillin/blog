@@ -58,7 +58,7 @@ Every message contains a unique identifier of the process who sent the message.
 
 ```
 B-multicast(m, g):
-    for each p in g,
+    for each p in g:
         send(p, m)
 ```
 

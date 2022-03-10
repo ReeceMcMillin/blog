@@ -93,6 +93,7 @@ pre
     padding: 1rem;
     margin-top: 0;
     margin-bottom: 3rem;
+    width: fit-content
     overflow: auto;
     font-size: $body-size;
     @include monospace-text
@@ -289,13 +290,23 @@ div
         display: inline-block
         width: 100%
         margin: 0rem auto 0 auto
+        font-size: $body-size
 
         ul
+            list-style: none
+        > ul
+            width: 100%
             padding-left: 4rem
             list-style: none
+
+            @include breakpoint(mobile)
+                padding-left: 0
+            
             li
+                width: max-content
                 p
                     margin: 0
+
 
         h2
             text-align: center
@@ -438,6 +449,7 @@ table
 div.columns
     display: flex
     flex-direction: row
+    flex-wrap: wrap
     justify-content: space-between
     margin: 0 auto
     @include breakpoint(desktop)
@@ -448,4 +460,7 @@ div.columns
         max-width: 100%
 
     >.column
-        width: 100%
+        box-sizing: border-box
+        margin: 0 auto
+        >pre
+            width: fit-content
