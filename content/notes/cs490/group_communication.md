@@ -9,7 +9,7 @@ mathjax=true
 A form of **indirect** communication where senders and receivers are decoupled in time and/or space.
 {% end %}
 
-Group communication enables a sender to send a message to a **group**.
+{{ reference(term="Group Communication") }}  enables a sender to send a message to a **group**.
 - message is propagated to *all* members in the group - also known as multicast.
 
 Message delivery satisfies:
@@ -51,8 +51,6 @@ Every message contains a unique identifier of the process who sent the message.
 # Basic Multicast
 
 ## Implementation
-<div class="columns">
-<div class="column">
 
 {% annotation(context="sender") %}
 
@@ -64,9 +62,6 @@ B-multicast(m, g):
 
 {% end %}
 
-</div>
-<div class="column">
-
 {% annotation(context="receiver") %}
 
 ```
@@ -75,11 +70,6 @@ On receive(m) at p:
 ```
 
 {% end %}
-
-</div>
-</div>
-
-
 
 
 ## Problems

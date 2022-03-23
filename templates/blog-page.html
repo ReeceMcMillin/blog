@@ -36,4 +36,15 @@
 <article class="content light-theme">
     {{ page.content | safe }}
 </article>
+
+<script>
+    const definitions = fetch('../../../definitions.json')
+        .then(response => response.json())
+        .then(data => {
+            const instances = Array.from(document.getElementsByTagName('abbr'));
+            instances.forEach(instance => {
+                instance.setAttribute('title', data[instance.id])
+            });
+        });
+</script>
 {% endblock content %}
