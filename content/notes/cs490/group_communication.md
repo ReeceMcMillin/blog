@@ -5,11 +5,9 @@ date = 2022-03-10
 mathjax=true
 +++
 
-{% definition(term="Group Communication") %}
-A form of **indirect** communication where senders and receivers are decoupled in time and/or space.
-{% end %}
+{{ definition(term="group communication) }}
 
-{{ reference(term="Group Communication") }}  enables a sender to send a message to a **group**.
+{{ reference(term="Group Communication") }} enables a sender to send a message to a **group**.
 - message is propagated to *all* members in the group - also known as multicast.
 
 Message delivery satisfies:

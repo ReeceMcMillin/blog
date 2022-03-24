@@ -1,0 +1,30 @@
+[definitions.cs431]
+"memory management unit" = "The hardware device that, at runtime, maps virtual addresses to physical addresses."
+"static linking" = "System libraries and program code are combined by the loader into the binary program image."
+"backing store" = "Fast disk large enough to accommodate copies of all memory images for all users. Must provide direct access to these memory images."
+"memory transaction" = "A sequence of read-write operations to memory that are performed atomically."
+
+[definitions.cs451]
+"slack" = '''- **Free Slack**: the amount of time a task can slip without delaying *another task*
+- **Total Slack**: the amount of time a task can slip without delaying the *project completion date*'''
+"resource leveling" = 'The process of developing a balance between resource availability and demand.'
+"planning horizon" = 'The distance into the future in which work items are well-understood.'
+"project management" = 'The process of minimizing typical project risks.'
+"batch-sequential processing" = 'Each step must finish before the next is allowed to start.'
+"usability" = '''- A measure of how easy a system it is to use. In this context, usability is a non-functional requirement (or quality attribute).
+
+- The extent to which a product can be used by **specified users** to achieve specified goals with effectiveness, efficiency, and satisfaction in a specified context of use." [ISO 9241-11]
+
+- A term that describes the study of ease of use, including methods and techniques for improving human-computer interaction.'''
+"software architecture" = "The structure/organization of high-level components in a software system. This includes high-level components and relationships between components."
+"design patterns" = "Reusable solutions to reoccurring design problems."
+
+[definitions.cs470]
+
+[definitions.cs490]
+"consensus" = 'A collection of processes "agree" on a value after one or more processes propose values'
+"group communication" = "A form of indirect communication where senders and receivers are decoupled in time and/or space."
+"file system" = "Provides a convenient programming interface to disk storage."
+
+[definitions.example]
+"distributed system" = "a system that's distributed!"

@@ -43,7 +43,7 @@
         .then(data => {
             const instances = Array.from(document.getElementsByTagName('abbr'));
             instances.forEach(instance => {
-                instance.setAttribute('title', data[instance.id])
+                instance.setAttribute('title', data[instance.id.toLowerCase()])
             });
         });
 </script>

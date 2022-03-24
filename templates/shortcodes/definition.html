@@ -1,6 +1,10 @@
+{% set data = load_data(path="definitions.toml", format="toml") %}
+{% set course = page.components[1] %}
+{% set term = term | lower %}
+
 <div class="def-wrapper">
     <dl class="theme-dark">
-        <dt>{{ term }}</dt>
-        <dd>{{ body | markdown(inline=true) | safe }}</dd>
+        <dt>{{ term | title }}</dt>
+        <dd>{{ data.definitions[course][term] | markdown(inline=true) | safe }}</dd>
     </dl>
 </div>

@@ -1,1 +1,6 @@
-<abbr id="{{term}}">{{term}}</abbr>
+{% set data = load_data(path="definitions.toml", format="toml") %}
+{% set course = page.components[1] %}
+{% set term_key = term | lower %}
+{% set definition = data.definitions[course][term_key] | markdown(inline=true) | safe %}
+
+<abbr title = "{{definition}}">{{term}}</abbr>

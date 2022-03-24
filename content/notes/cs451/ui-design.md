@@ -22,13 +22,7 @@ For most projects, usability is the **highest** priority non-functional attribut
 - User Retention
 - Satisfaction
 
-{% definition(term="Usability") %}
-- A measure of how easy a system it is to use. In this context, usability is a non-functional requirement (or quality attribute).
-
-- The extent to which a product can be used by **specified users** to achieve specified goals with effectiveness, efficiency, and satisfaction in a specified context of use." [ISO 9241-11]
-
-- A term that describes the study of ease of use, including methods and techniques for improving human-computer interaction.
-{% end %}
+{{ definition(term="Usability") }}
 
 ## Factors that Determine Software Usability
 

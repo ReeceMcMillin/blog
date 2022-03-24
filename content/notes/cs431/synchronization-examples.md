@@ -90,7 +90,5 @@ do {
 
 # Transactional Memory
 
-{% definition(term="Memory Transaction") %}
-A sequence of read-write operations to memory that are performed atomically.
-{% end %}
+{{ definition(term="Memory Transaction") }}
 

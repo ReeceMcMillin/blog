@@ -64,13 +64,9 @@ Donec accumsan nulla at enim maximus, ac hendrerit elit bibendum. Aenean vitae f
 
 definitions are highlighted like this! it uses a regular old definition list under the hood for that sweet sweet semantic goodness
 
-{% definition(term="distributed system") %}
-a system that's distributed!
-{% end %}
+{{ definition(term="distributed system", course="blog") }}
 
-that's about it for this one but i'm adding some text here to pad things out
-
-
+a definition in `/static/definitions.toml` can be referenced like this: {{ reference(term="distributed system", course="blog") }}.
 
 # Math
 

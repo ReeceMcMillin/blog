@@ -10,9 +10,7 @@ mathjax=true
 - **Risks** are potential problems that have not (or may not) arrive
 - **Problems** are issues that have materialized and may compromise the project
 
-{% definition(term="Project Management") %}
-The process of minimizing typical project risks.
-{% end %}
+{{ definition(term="Project Management") }}
 
 1. Identify Risks
 	- Risks can be project, product, or business risks

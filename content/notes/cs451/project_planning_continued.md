@@ -17,12 +17,7 @@ Most common tool: the [Gantt Chart](https://www.gantt.com/). It shows start and 
 
 The longest sequence of activities in the network diagram
 
-{% definition(term="Slack") %}
-
-- **Free Slack**: the amount of time a task can slip without delaying *another task*
-- **Total Slack**: the amount of time a task can slip without delaying the *project completion date*
-
-{% end %}
+{{ definition(term="slack") }}
 
 # Order of Events
 
@@ -30,10 +25,7 @@ Question: is it better to:
 - assign resources \\(\rightarrow\\) estimate effort \\(\rightarrow\\) schedule
 - estimate effort \\(\rightarrow\\) schedule \\(\rightarrow\\) assign resources
 
-{% definition(term="Resource Leveling") %}
-
-The process of developing a balance between resource availability and demand.
-{% end %}
+{{ definition(term="Resource Leveling") }}
 
 # Planning Methods
 

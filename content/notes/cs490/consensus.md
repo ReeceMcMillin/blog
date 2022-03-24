@@ -9,11 +9,7 @@ mathjax = true
 
 Consensus is an "agreement" problem.
 
-{% definition(term="Consensus") %}
-
-A collection of processes "agree" on a value after one or more processes propose values
-
-{% end %}
+{{ definition(term="Consensus") }}
 
 ## Qualities
 

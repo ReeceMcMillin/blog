@@ -15,9 +15,7 @@ Predictive planning is an option if:
 
 Adaptive Planning is better suited to new product development and exploratory-type projects with uncertainty
 
-{% definition(term="Planning Horizon") %}
-The distance into the future in which work items are well-understood.
-{% end %}
+{{ definition(term="Planning Horizon") }}
 
 # Work Breakdown Structure (WBS)
 

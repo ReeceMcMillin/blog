@@ -8,10 +8,6 @@ mathjax = true
 # Software Architecture
 
 > Architecture is what remains when you cannot take away any more things and still understand the system and explain how it works. [Kruchten, 2000]
-> 
-{% definition(term="Software Architecture") %}
-The structure/organization of high-level components in a software system. This includes high-level components and relationships between components.
-{% end %}
 
 Software systems have both non-functional and functional requirements. Architecture determines the degree to which non-functional requirements are present.
 
@@ -47,9 +43,7 @@ Different stakeholders are interested in different aspects of the architecture! 
 
 ## Architectural Styles
 
-{% definition(term="Design Patterns") %}
-Reusable solutions to reoccurring design problems.
-{% end %}
+{{ definition(term="Design Patterns") }}
 
 Common architecture styles:
 - client/server
@@ -96,7 +90,4 @@ Filters:
 - may act as buffer or simple procedure calls
 - only allowed to communicate through unidirectional pipes
 
-{% definition(term="Batch-Sequential Processing") %}
-Each step must finish before the next is allowed to start.
-
-{% end %}
+{{ definition(term="batch-sequential processing) }}
