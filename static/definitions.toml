@@ -25,6 +25,12 @@
 "consensus" = 'A collection of processes "agree" on a value after one or more processes propose values'
 "group communication" = "A form of indirect communication where senders and receivers are decoupled in time and/or space."
 "file system" = "Provides a convenient programming interface to disk storage."
-
+"write-through" = "Write in memory and also to disk, then reply to client."
+"write-commit" = "write in memory but to the disk only when a commit is requested (usually when file is closed)"
+"one-copy semantic" = '''
+- updates are written to the single copy and available immediately
+- all clients see contents of file identically as if only *one copy* of the file exists
+- if caching is used: after an update operation, no program can observe a discrepancy between data in cache and stored data
+'''
 [definitions.example]
 "distributed system" = "a system that's distributed!"

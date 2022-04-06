@@ -242,6 +242,7 @@ div
             >.context
                 flex: 1
                 text-align: right
+
     &.title-block
         font-family: $title-font
         text-align: center
@@ -471,3 +472,21 @@ div.columns
 
 abbr::after
     content: none
+
+dfn
+    text-decoration: underline;
+
+dfn:hover
+    background-color: rgba(0, 217, 255, 0.267);
+
+[role=definition]
+    @include shadow-box
+    @include themify($themes)
+        background-color: themed(background-highlight)
+    position: absolute;
+    display: block;
+    visibility: hidden;
+    font-size: 20px;
+    font-family: Iosevka, monospace;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;

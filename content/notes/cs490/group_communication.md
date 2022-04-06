@@ -5,7 +5,7 @@ date = 2022-03-10
 mathjax=true
 +++
 
-{{ definition(term="group communication) }}
+{{ definition(term="group communication") }}
 
 {{ reference(term="Group Communication") }} enables a sender to send a message to a **group**.
 - message is propagated to *all* members in the group - also known as multicast.

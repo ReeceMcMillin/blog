@@ -36,15 +36,20 @@
 <article class="content light-theme">
     {{ page.content | safe }}
 </article>
-
 <script>
-    const definitions = fetch('../../../definitions.json')
-        .then(response => response.json())
-        .then(data => {
-            const instances = Array.from(document.getElementsByTagName('abbr'));
-            instances.forEach(instance => {
-                instance.setAttribute('title', data[instance.id.toLowerCase()])
-            });
-        });
+    var definitions = document.querySelectorAll('dfn');
+    Array.from(definitions).forEach((def) => {
+        const describedBy = def.getAttribute('aria-describedby');
+        var definition = document.getElementById(describedBy);
+        def.onmouseover = () => {
+            definition.style.visibility = 'visible';
+        };
+
+        def.onmouseleave = () => {
+            definition.style.visibility = 'hidden';
+        };
+
+    });
+    
 </script>
 {% endblock content %}

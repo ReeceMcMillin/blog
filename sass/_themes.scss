@@ -12,6 +12,7 @@ $dark-secondary: #1adfbb;
 $dark-subtext: #bebaa3;
 $dark-foreground: #fcf8e1;
 $dark-background: #1f1f24;
+$dark-background-highlight: #2f2f32;
 
 $themes: (
     light: (
@@ -26,6 +27,7 @@ $themes: (
         secondary: $dark-secondary,
         subtext: $dark-subtext,
         background: $dark-background,
+        background-highlight: $dark-background-highlight,
         foreground: $dark-foreground,
     ),
 );
