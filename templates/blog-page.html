@@ -52,4 +52,21 @@
     });
     
 </script>
+
+<footer class="neighbors">
+    {% if page.earlier %}
+        <div class="previous-post">
+            <div class="neighbor-title">Previous</div>
+            <a href="{{ page.earlier.permalink | safe }}">{{ page.earlier.title }}</a>
+        </div>
+    {% endif %}
+
+    {% if page.later %}
+        <div class="next-post">
+            <div class="neighbor-title">Next</div>
+            <a href="{{ page.later.permalink | safe }}">{{ page.later.title }}</a>
+        </div>
+{% endif %}
+</footer>
+
 {% endblock content %}

@@ -11,6 +11,6 @@
 
 <dfn aria-describedby='{{term}}' role="term">{{term}}</dfn>
 
-<div hidden role="definition" class="theme-dark definition" id="{{term}}">
+<span hidden role="definition" class="theme-dark definition" id="{{term}}">
     {{ data.definitions[course][term] | markdown(inline=true) | safe }}
-</div>
+</span>
